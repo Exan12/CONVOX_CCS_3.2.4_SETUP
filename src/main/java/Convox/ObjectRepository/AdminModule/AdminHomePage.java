@@ -73,7 +73,7 @@ public class AdminHomePage extends WebDriverLibrary {
 	
 	@FindBy (xpath = "//body//div//thead//td[3]")
 	private WebElement ProcessStoppedButton;
-
+	
 	// Initialization
 	public AdminHomePage(WebDriver driver)
 	{
@@ -154,7 +154,7 @@ public class AdminHomePage extends WebDriverLibrary {
 	}
 
 
-	// Business Library Logics
+// Business Library Logics
 
 	/**
 	 * This Method is used to logout the Admin from Convox CCS 3.2.4 Application
@@ -208,8 +208,10 @@ public class AdminHomePage extends WebDriverLibrary {
 
 	}
 	
+	
 	/**
 	 * This Method is used to upload the List in Admin Module of ConVox CCS 3.2.4 Application
+	 * @param driver
 	 */
 	public void Listupload(WebDriver driver)
 	{
@@ -229,7 +231,8 @@ public class AdminHomePage extends WebDriverLibrary {
 	
 	/**
 	 * This Method is used to Active the List in Admin Module of ConVox CCS 3.2.4 Application
-	 * @throws Throwable 
+	 * @param driver
+	 * @throws Throwable
 	 */
 	public void ProcessActive(WebDriver driver) throws Throwable
 	{
@@ -240,5 +243,22 @@ public class AdminHomePage extends WebDriverLibrary {
 		wLib.switchToDefaultFrame(driver);
 		Reporter.log("Campaign Started Succesfully",true);
 	}
+	
+	/**
+	 *This Method is used to In-Active the List in Admin Module of ConVox CCS 3.2.4 Application 
+	 * @param driver
+	 * @throws Throwable
+	 */
+	public void ProcessInActive(WebDriver driver) throws Throwable
+	{
+		wLib.switchToFrame(driver, "active_list");
+		Reporter.log("Switched to Active List Frame",true);
+		Thread.sleep(2000);   
+		ProcessStoppedButton.click();
+		wLib.switchToDefaultFrame(driver);
+		Reporter.log("Campaign Stopped Succesfully",true);
+	}
+	
+	
 
 }

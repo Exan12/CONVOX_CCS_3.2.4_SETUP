@@ -32,6 +32,7 @@ public class AdminOperationTest extends BaseClass{
 		AdminHomePage adhp = new AdminHomePage(driver);
 		adhp.ListCreation(driver);
 		adhp.ProcessActive(driver);
+		adhp.ProcessInActive(driver);
 	
 		// ADMIN Logout from ConVox CCS 3.2.4 Application
 		adhp.AdminLogout();

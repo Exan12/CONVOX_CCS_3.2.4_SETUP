@@ -65,7 +65,7 @@ public class AdminLoginPage extends WebDriverLibrary{
 		AdminImg.click();
 		AdminusernameTxtField.sendKeys(adminusername);
 		AdminpasswordTxtField.sendKeys(adminpassword);
-		//AdminloginBtn.click();		   
+		AdminloginBtn.click();		   
 	}
 	
 }
